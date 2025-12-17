@@ -20,6 +20,7 @@ function generateBoard() {
         tile.style.height = `${tileSize}px`;
 
         tile.addEventListener("mouseover", () => {
+            tile.style.backgroundColor = randomColor();
             tile.style.filter = darken(tile.style.filter);
         });
 
@@ -29,8 +30,9 @@ function generateBoard() {
 }
 
 function darken(currentBright) {
-    num = currentBright.substring(currentBright.indexOf("(")+1, currentBright.length-1);
-    level = parseFloat(num) - 0.1;
+    let num = currentBright.substring(currentBright.indexOf("(")+1, currentBright.length-1);
+    const darkenRate = 0.1;
+    level = parseFloat(num) - darkenRate;
     if (level < 0) {
         level = 0;
     }
@@ -42,4 +44,11 @@ function remakeBoard() {
     let tilesToRemove = document.querySelectorAll(".etchTile");
     board.replaceChildren();
     generateBoard();
+}
+
+function randomColor() {
+    red = Math.random() * 256;
+    green = Math.random() * 256;
+    blue = Math.random() * 256;
+    return `rgb(${red}, ${green}, ${blue})`;
 }
