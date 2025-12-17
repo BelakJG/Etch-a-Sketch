@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.etchContainer {
+    display: flex;
+    flex-wrap: wrap;
+    outline: 2px solid red;
+    width: 800px;
+    height: 800px;
+}
+
+.etchTile {
+    display: flex;
+    outline: 1px solid black;
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0;
+}
