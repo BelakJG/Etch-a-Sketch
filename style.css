@@ -1,3 +1,7 @@
+:root {
+    --col_count: 100;
+}
+
 body {
     display: flex;
     margin: 16px;
@@ -21,8 +25,9 @@ body {
 }
 
 .etchContainer {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(var(--col_count), 1fr);
+    grid-template-rows: repeat(var(--col_count), 1fr);
     background-color: white;
     outline: 2px solid red;
     width: 600px;
@@ -30,6 +35,5 @@ body {
 }
 
 .etchTile {
-    display: flex;
-    flex-shrink: 0;
+    position: relative;
 }
