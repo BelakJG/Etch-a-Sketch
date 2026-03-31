@@ -10,14 +10,12 @@ function generateBoard() {
         numTilesPerRow = 100;
     }
     let totalTiles = numTilesPerRow ** 2;
-    let tileSize = board.clientWidth / numTilesPerRow;
+    document.querySelector(":root").style.setProperty("--col_count", numTilesPerRow)
     for (let i = 0; i < totalTiles; i++) {
         const tile = document.createElement("div");
         tile.classList.add("etchTile");
         tile.style.backgroundColor = "White"
         tile.style.filter = "brightness(1)";
-        tile.style.width = `${tileSize}px`;
-        tile.style.height = `${tileSize}px`;
 
         tile.addEventListener("mouseover", () => {
             tile.style.backgroundColor = randomColor();
